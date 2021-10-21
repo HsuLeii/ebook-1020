@@ -743,6 +743,7 @@ input:checked + label:after {
 	.half-book-page-img > .text{
 		margin-top: 0px;
 		height: auto;
+		transform: translate(0px, 0px);
 	}
 	.button-area{
 		display: block;
@@ -915,6 +916,7 @@ input:checked + label:after {
 	}
 	.half-book-page-img > .book-page-bg{
 		max-width: none;
+		transform: translate(0px, 0px);
 	}
 	.book-page.move > .book-page-img > .b1-1-text{
 		bottom: 5px;
