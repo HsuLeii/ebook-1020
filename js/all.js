@@ -73,7 +73,9 @@ if ($(window).width() < 768) {
           $(".a2-2-text p").hide();
           $(".book-page-img").css("justify-content","center");
       }
-    });  
+    }); 
+    var halftextwidth = $(".book-page-bg > img").width();     
+      $(".text").css({"max-width": halftextwidth });  
   }
   else if ($(window).width() > 768) {
     var textwidth = $(".book-page-bg > img").width();     
