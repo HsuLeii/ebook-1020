@@ -82,17 +82,12 @@ if ($(window).width() < 768) {
       $(".text").css({"max-width": textwidth }); 
     var textheight = $(".a2-2-book-page-bg > img").height();     
       $(".a2-2-text").css({"height": textheight }); 
-      $("#text-id").change(function () {
-          if ($(this).is(":checked")) {
-              $(".a2-2-text p").show();
-              $(".book-page-img").css("justify-content","space-around");
-          } else {
-              $(".a2-2-text p").hide();
-              $(".book-page-img").css("justify-content","center");
-          }
-        });
-}
+    }
 $(function () {
+  var templatetextwidth = $(".book-page-bg > img").width();     
+      $(".text").css({"width": templatetextwidth });  
+      var templatetextheight = $(".book-page-bg > img").height();     
+      $(".text").css({"height": templatetextheight }); 
   $("#pinyin-id").change(function () {
       if ($(this).is(":checked")) {
           $(".text p > ruby > rt").show();
@@ -102,14 +97,11 @@ $(function () {
     });
     $("#text-id").change(function () {
       if ($(this).is(":checked")) {
-          $(".text p").show();
+          $(".text").show();
       } else {
-          $(".text p").hide();
+          $(".text").hide();
       }
     });
-
-   
-    
-  });
+    });
 
   
