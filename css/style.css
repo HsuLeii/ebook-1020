@@ -138,7 +138,7 @@ header{
 	max-height: calc((100vh - 280px) / 2);
 	height: 100%;
 	width: 100%;
-	background-color: #ffffff75;
+	background-color: #ffffff;
 	position: static;
 	bottom: auto;
 }
