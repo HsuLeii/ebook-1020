@@ -906,6 +906,9 @@ input:checked + label:after {
         bottom: 290px;
         transform: translate(0px, 0%);
     }
+	.book-page.move > .half-book-page-img {
+        max-width: none;
+    }
 	.book-page.move > .book-page-img img{
 		transform: translate(0px , 0px);
 	}
