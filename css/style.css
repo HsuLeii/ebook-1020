@@ -736,7 +736,6 @@ input:checked + label:after {
 		max-width: 80%;
 		bottom: 100px;
 		max-height: calc((100vh - 250px) / 3);
-		margin-top: 15px;
 	}
 	.a2-2-text{
 		max-width: 90%;
