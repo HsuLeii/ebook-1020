@@ -922,6 +922,9 @@ input:checked + label:after {
 		max-height: calc(100vh - 305px);
 		bottom: 280px;
 	}
+	.a2-2-book-page.move > .book-page-img > .book-page-bg , .a2-2-book-page.move > .book-page-img > .text{
+		transform: translate(0px, 0px);
+	}
 	.a2-2-book-page > .book-page-img img{
 		max-height: calc((100vh - 280px) / 2);
 	}
