@@ -899,7 +899,7 @@ input:checked + label:after {
     }
     .book-page.move > .book-page-img {
         max-width: none;
-        max-height: calc(100vh - 320px);
+        max-height: calc(100vh - 290px);
         right: auto;
         left: auto;
         top: auto;
