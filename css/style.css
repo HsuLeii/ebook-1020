@@ -126,8 +126,7 @@ header{
 .a2-2-book-page-bg{
 	width: auto;
 }
-.a2-2-book-page > .book-page-img{
-}
+
 .half-book-page-img{
 	flex-direction: column;
 	justify-content: space-around;
@@ -890,6 +889,9 @@ input:checked + label:after {
 		-webkit-transform: rotate(180deg);
 		-ms-transform: rotate(180deg);
 	}
+	.book-page-bg{
+		height: auto;
+	}
 	.book-page.screen{
 		height: calc(100vh - 46.4px);
 	}
@@ -898,7 +900,7 @@ input:checked + label:after {
     }
     .book-page.move > .book-page-img {
         max-width: none;
-        max-height: calc(100vh - 290px);
+        max-height: calc(100vh - 320px);
         right: auto;
         left: auto;
         top: auto;
