@@ -898,7 +898,7 @@ input:checked + label:after {
         transform: translate(0px, -32px);
     }
     .book-page.move > .book-page-img {
-        max-width: none;
+        max-width: 90%;
         max-height: calc(100vh - 290px);
         right: auto;
         left: auto;
