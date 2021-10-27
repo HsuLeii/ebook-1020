@@ -172,7 +172,7 @@ header{
 	text-align: center;
     word-break: break-all;
     margin: 0 auto;
-	padding: 15px 15px 5px;
+	padding: 15px 5px 5px;
     background-color: #ffffff75;
 }
 .a1-2-text p {
@@ -758,7 +758,7 @@ input:checked + label:after {
         height: 100vh;
     }
 	.book-page-img img {
-    max-width: 80%;
+    max-width: 100%;
     max-height: calc(100vh - 280px);
 	}
 	.text{
