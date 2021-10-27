@@ -942,7 +942,7 @@ input:checked + label:after {
 	}
 	.a2-2-book-page-bg{
 		max-width: 65%;
-		max-height: calc((100vh - 280px) / 2);
+		max-height: calc((100vh - 320px) / 2);
 		transform: translate(0px, -16px);
 	}
 	.a2-2-book-page > .book-page-img{
@@ -958,7 +958,7 @@ input:checked + label:after {
 		transform: translate(0px, 0px);
 	}
 	.a2-2-book-page > .book-page-img img{
-		max-height: calc((100vh - 280px) / 2);
+		max-height: calc((100vh - 320px) / 2);
 	}
 	.half-book-page-img{
 		justify-content: center;
