@@ -938,8 +938,7 @@ input:checked + label:after {
 		transform: translate(0px , 0px);
 	}
 	.a2-2-book-page-bg{
-		max-width: 65%;
-		max-height: calc((100vh - 320px) / 2);
+		max-height: calc((100vh - 280px) / 2);
 	}
 	.a2-2-book-page > .book-page-img{
 		flex-direction: column;
