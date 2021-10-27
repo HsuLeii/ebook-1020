@@ -766,11 +766,8 @@ input:checked + label:after {
 	}
 	.a2-2-text{
 		max-width: 90%;
-		transform: translate(0px, 0px);
 	}
-	.a2-2-text p{
-		max-height: calc((100vh - 280px) / 3);
-	}
+	
 	.b1-1-text{
 		max-width: 90%;
 		max-height: calc(90vh - 305px);
@@ -943,19 +940,11 @@ input:checked + label:after {
 	.a2-2-book-page-bg{
 		max-width: 65%;
 		max-height: calc((100vh - 320px) / 2);
-		transform: translate(0px, 0px);
 	}
 	.a2-2-book-page > .book-page-img{
 		flex-direction: column;
 		justify-content: center;
 		max-height: calc(100vh - 280px);
-	}
-	.a2-2-book-page.move > .book-page-img{
-		max-height: calc(100vh - 320px);
-		bottom: 270px;
-	}
-	.a2-2-book-page.move > .book-page-img > .book-page-bg , .a2-2-book-page.move > .book-page-img > .text{
-		transform: translate(0px, 0px);
 	}
 	.a2-2-book-page > .book-page-img img{
 		max-height: calc((100vh - 320px) / 2);
