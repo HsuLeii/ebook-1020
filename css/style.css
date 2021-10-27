@@ -777,7 +777,7 @@ input:checked + label:after {
 	.half-book-page-img > .text{
 		margin-top: 0px;
 		height: auto;
-		transform: translate(0px, 0px);
+		transform: translate(0px, -16px);
 	}
 	.template-book-page-img > .text{
 		max-height: none;
@@ -926,7 +926,7 @@ input:checked + label:after {
     }
     .book-page.move > .book-page-img {
         max-width: 90%;
-        max-height: calc(100vh - 290px);
+        max-height: calc(100vh - 310px);
         right: auto;
         left: auto;
         top: auto;
@@ -963,7 +963,7 @@ input:checked + label:after {
 	}
 	.half-book-page-img > .book-page-bg{
 		max-width: none;
-		transform: translate(0px, 0px);
+		transform: translate(0px, -16px);
 	}
 	.book-page.move > .half-book-page-img > .book-page-bg {
 		max-width: 90%;
