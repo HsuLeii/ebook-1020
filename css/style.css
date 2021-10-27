@@ -142,15 +142,19 @@ header{
 	position: static;
 	bottom: auto;
 }
-.half-book-page-img > .text p{
+.half-book-page-img > .text > .article p{
 	background-color: transparent;
 }
 .template-book-page-img > .text{
 	bottom: auto;
 }
-.template-book-page-img > .text p{
+.template-book-page-img > .text > .article p{
 	background-color: #ffffff75;
 	text-align: left;
+}
+.template-book-page-img > .text > .article , .template-book-page-img > .text > .article p{
+	width: 100%;
+	height: 100%;
 }
 .picture-below > .book-page-bg{
 	order: 2;
@@ -168,19 +172,12 @@ header{
 	transform: translate(0px, -32px);
 	overflow: auto;
 }
-.text p{
+.text > .article p{
 	text-align: center;
     word-break: break-all;
     margin: 0 auto;
 	padding: 15px 5px 5px;
     background-color: #ffffff75;
-}
-.a1-2-text p {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -0%);
-    width: 100%;
 }
 .a2-2-text {
     top: auto;
@@ -188,7 +185,7 @@ header{
     max-width: 45%;
 	position: static;
 }
-.a2-2-text p{
+.a2-2-text > .article p{
 	text-align: left;
     line-height: 2;
 	overflow: scroll;
@@ -197,7 +194,7 @@ header{
     top: auto;
     bottom: auto;
 }
-.b1-1-text p{
+.b1-1-text > .article p{
 	text-align: left;
 	overflow: scroll;
 	font-size: 25px;
@@ -205,33 +202,38 @@ header{
 	line-height: 1.8;
     letter-spacing: 3px;
 }
-.bottom-left-text p{
+.bottom-left-text > .article , .bottom-right-text > .article , .top-left-text > .article , .top-right-text > .article{
 	position: absolute;
+	width: auto;
+	max-width: calc(100% - 24px);
+}
+.a1-1-text > .article , .a1-2-text > .article{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.a1-1-text > .article{
+	top: 12px;
+}
+.a1-2-text > .article{
+	bottom: 12px;
+}
+.bottom-left-text > .article{
     bottom: 12px;
     left: 12px;
-    width: auto;
-	max-width: calc(100% - 24px);
 }
-.bottom-right-text p{
-	position: absolute;
+.bottom-right-text > .article{
     bottom: 12px;
     right: 12px;
-    width: auto;
-	max-width: calc(100% - 24px);
 }
-.top-left-text p{
-	position: absolute;
+.top-left-text > .article{
     top: 12px;
     left: 12px;
-    width: auto;
-	max-width: calc(100% - 24px);
 }
-.top-right-text p{
-	position: absolute;
+.top-right-text > .article{
     top: 12px;
     right: 12px;
-    width: auto;
-	max-width: calc(100% - 24px);
 }
 .book-page-img img {
 	width: auto;
