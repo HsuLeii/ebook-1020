@@ -952,7 +952,7 @@ input:checked + label:after {
 	}
 	.a2-2-book-page.move > .book-page-img{
 		max-height: calc(100vh - 320px);
-		bottom: 280px;
+		bottom: 270px;
 	}
 	.a2-2-book-page.move > .book-page-img > .book-page-bg , .a2-2-book-page.move > .book-page-img > .text{
 		transform: translate(0px, 0px);
