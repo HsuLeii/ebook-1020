@@ -766,6 +766,7 @@ input:checked + label:after {
 	}
 	.a2-2-text{
 		max-width: 90%;
+		transform: translate(0px, -16px);
 	}
 	.a2-2-text p{
 		max-height: calc((100vh - 280px) / 3);
@@ -942,6 +943,7 @@ input:checked + label:after {
 	.a2-2-book-page-bg{
 		max-width: 65%;
 		max-height: calc((100vh - 280px) / 2);
+		transform: translate(0px, -16px);
 	}
 	.a2-2-book-page > .book-page-img{
 		flex-direction: column;
