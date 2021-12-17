@@ -118,8 +118,8 @@ header{
 	width: 100%;
 	height: 100%;
 	max-width: 90%;
-    max-height: calc(100vh - 200px);
-    transform: translate(0px, -40px);
+    /* max-height: calc(100vh - 200px); */
+    transform: translate(0px, -30px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -183,7 +183,7 @@ header{
     width: auto;
     height: auto;
     max-width: 50%;
-	transform: translate(0px, -40px);
+	transform: translate(0px, -30px);
 	overflow: auto;
 }
 .text > .article p{
@@ -198,7 +198,7 @@ header{
     bottom: auto;
     max-width: 45%;
 	position: static;
-	max-height: calc(100vh - 200px);
+	max-height: calc(100vh - 240px);
 }
 .two-right-text > .article p{
 	text-align: left;
@@ -253,7 +253,7 @@ header{
 .book-page-img img {
 	width: auto;
 	height: auto;
-	max-height: calc(100vh - 200px);
+	max-height: calc(100vh - 240px);
 }
 .book-page.move{
 	z-index:1;
@@ -415,10 +415,15 @@ header{
 .button-menu ul{
 	display: flex;
 }
+.btn-next{
+	margin-left: 10px;
+}
+.btn-prev{
+	margin-right: 10px;
+}
 .background-icon{
 	width: 25px;
 	height: 25px;
-	margin-left: 15px;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -894,7 +899,6 @@ input:checked ~ label:after {
 	.background-icon{
 		width: 20px;
 		height: 20px;
-		margin-left: 0px;
 	}
 	.bottom-tab{
 		display: none;
@@ -952,7 +956,6 @@ input:checked ~ label:after {
 	.play button:nth-child(2) {
 		width: 35px;
 		height: 35px;
-		margin: 0px 15px;
 	}
 	.progress {
 		position: static;
