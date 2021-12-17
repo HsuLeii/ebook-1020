@@ -420,10 +420,12 @@ header{
 }
 .btn-prev{
 	margin-right: 10px;
+	margin-left: 0px;
 }
 .background-icon{
 	width: 25px;
 	height: 25px;
+	margin-left: 15px;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
