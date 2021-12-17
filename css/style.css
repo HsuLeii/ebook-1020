@@ -527,6 +527,18 @@ header{
 .btn-word:hover{
 	background-image: url(../image/button/word-orange.svg);
 }
+.btn-word.simplified{
+	background-image: url(../image/button/word-simplified.svg);
+}
+.btn-word.simplified:hover{
+	background-image: url(../image/button/word-simplified-orange.svg);
+}
+.btn-word.traditionale{
+	background-image: url(../image/button/word-traditionale.svg);
+}
+.btn-word.traditionale:hover{
+	background-image: url(../image/button/word-traditionale-orange.svg);
+}
 .mute{
 	background-image: url(../image/button/mute.svg);
 }
@@ -838,6 +850,12 @@ input:checked ~ label:after {
 }
 .btn-word:hover{
 	background-image: url(../image/button/word.svg);
+}
+.btn-word.simplified:hover{
+	background-image: url(../image/button/word-simplified.svg);
+}
+.btn-word.traditionale:hover{
+	background-image: url(../image/button/word-traditionale.svg);
 }
 .mute:hover{
 	background-image: url(../image/button/mute.svg);
