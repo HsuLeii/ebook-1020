@@ -106,10 +106,6 @@ favorite.addEventListener('click', function () {
   this.classList.toggle("click");
 });
 if ($(window).width() < 768) {
-  $(".sound-line").css({
-    "width": "4px",
-    "height": "40%"
-  });
   $("#text-id").change(function () {
     if ($(this).is(":checked")) {
       $(".a2-2-text p").show();
@@ -118,14 +114,6 @@ if ($(window).width() < 768) {
       $(".a2-2-text p").hide();
       $(".book-page-img").css("justify-content", "center");
     }
-  });
-  var halftextwidth = $(".book-page-bg > img").width();
-  $(".text").css({
-    "max-width": halftextwidth
-  });
-  var textheight = $(".a2-2-book-page-bg > img").height() / 2;
-  $(".a2-2-text").css({
-    "max-height": textheight
   });
 } else if ($(window).width() > 768) {
   var textwidth = $(".book-page-bg > img").width();
@@ -137,6 +125,12 @@ if ($(window).width() < 768) {
     "height": textheight
   });
 }
+var halftextwidth = $(".book-page-bg").width();
+  $(".text").css({
+    "max-width": halftextwidth
+  });
+  var textheight = $(".a2-2-book-page-bg > img").height() / 2;
+  $(".a2-2-text").css({"max-height": textheight});
 $(function () {
   var templatetextwidth = $(".book-page-bg > img").width();
   $(".text").css({
@@ -145,6 +139,10 @@ $(function () {
   var templatetextheight = $(".book-page-bg > img").height();
   $(".text").css({
     "height": templatetextheight
+  });
+  var tworightbookbg = $(".two-right-book-page-bg").height();
+  $(".two-right-text").css({
+    "height": tworightbookbg
   });
   $("#pinyin-id").change(function () {
     if ($(this).is(":checked")) {
@@ -163,5 +161,5 @@ $(function () {
   $(".text.two-right-text").css({
     "max-width": "45%"
   });
-
+  
 });
