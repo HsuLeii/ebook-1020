@@ -40,6 +40,45 @@ $("#read-id").click(function() {
   }
 });
 
+$("#pinyin-id").change(function () {
+  if ($(this).is(":checked")) {
+    $(".text p > ruby > rt").show();
+    $(".text > .article > p > ruby > rt").show();
+  } else {
+    $(".text p > ruby > rt").hide();
+    $(".text > .article > p > ruby > rt").hide();
+  }
+});
+$("#text-id").change(function () {
+  if ($(this).is(":checked")) {
+    $(".text").show();
+  } else {
+    $(".text").hide();
+  }
+});
+
+$(function () {
+  var templatetextwidth = $(".book-page-bg > img").width();
+  $(".text").css({
+    "width": templatetextwidth
+  });
+  var templatetextheight = $(".book-page-bg > img").height();
+  $(".text").css({
+    "height": templatetextheight
+  });
+  var tworightbookbg = $(".two-right-book-page-bg").height();
+  $(".two-right-text").css({
+    "height": tworightbookbg
+  });
+  $(".text.two-right-text").css({
+    "max-width": "45%"
+  });
+  var halftextwidth = $(".book-page-bg").width();
+  $(".text").css({"max-width": halftextwidth});
+  var textheight = $(".a2-2-book-page-bg > img").height() / 2;
+  $(".a2-2-text").css({"max-height": textheight});
+});
+
 word.addEventListener('click', function () {
   // this.classList.toggle("end-word");
   vocabulary.classList.toggle("open");
@@ -125,41 +164,4 @@ if ($(window).width() < 768) {
     "height": textheight
   });
 }
-var halftextwidth = $(".book-page-bg").width();
-  $(".text").css({
-    "max-width": halftextwidth
-  });
-  var textheight = $(".a2-2-book-page-bg > img").height() / 2;
-  $(".a2-2-text").css({"max-height": textheight});
-$(function () {
-  var templatetextwidth = $(".book-page-bg > img").width();
-  $(".text").css({
-    "width": templatetextwidth
-  });
-  var templatetextheight = $(".book-page-bg > img").height();
-  $(".text").css({
-    "height": templatetextheight
-  });
-  var tworightbookbg = $(".two-right-book-page-bg").height();
-  $(".two-right-text").css({
-    "height": tworightbookbg
-  });
-  $("#pinyin-id").change(function () {
-    if ($(this).is(":checked")) {
-      $(".text p > ruby > rt").show();
-    } else {
-      $(".text p > ruby > rt").hide();
-    }
-  });
-  $("#text-id").change(function () {
-    if ($(this).is(":checked")) {
-      $(".text").show();
-    } else {
-      $(".text").hide();
-    }
-  });
-  $(".text.two-right-text").css({
-    "max-width": "45%"
-  });
-  
-});
+
