@@ -128,9 +128,7 @@ header{
 	height: auto;
 	max-width: 65%;
 }
-.two-right-book-page-bg img{
-	width: 100% !important;
-}
+
 
 .half-book-page-img{
 	flex-direction: column;
