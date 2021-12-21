@@ -316,6 +316,7 @@ header{
 	margin-left: -10px;
 	cursor:pointer;
 	position: relative;
+	display: none;
 }
 .number-page{
 	font-size: 17px;
@@ -918,6 +919,7 @@ input:checked ~ label:after {
 		margin-top: 40px;
 		font-size: 20px;
 	}
+	
     .book-page-img{
         height: 100vh;
     }
@@ -1000,7 +1002,7 @@ input:checked ~ label:after {
 		transform: translateX(0%);
 		-webkit-transform: translateX(0%);
 		-ms-transform: translateX(0%);
-		margin: 10px auto 15px;
+		margin: 8px auto 14px;
 		height: 35px;
 	}
 	.play button {
