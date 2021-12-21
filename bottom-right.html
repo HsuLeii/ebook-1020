@@ -99,22 +99,31 @@
                 <button class="cursor btn-next background-icon"></button>
         </div>
 </div>
-
 <div class="button-area">
     <div class="sound">
-        <button class="sound-img cursor background-icon">
-        </button>
-            <div class="sound-drag-line">
-                <div class="sound-line" style="width: 40%; height: 4px; "></div> 
-                <div class="sound-draggable-button cursor"></div>   
+        <button class="sound-img cursor background-icon" disabled></button>
+        <div id="bar_mc" class="sound-drag-line">
+            <div class="sound-back-line">
             </div>
-        
+            <div class="sound-line grey" style="width:50%; height: 4px;">
+            </div>
+            <div id="move_mc" class="sound-draggable-button cursor"></div>
+        </div>
     </div>
+
     <div class="button-menu">
         <ul>
             <!-- <li class="cursor" aria-label="加入書庫">
                 <button class="btn-favorite cursor background-icon"></button>
             </li> -->
+            <li class="cursor" aria-label="唸讀">
+                <button class="btn-verbatim cursor background-icon"></button>
+                <div class="read-menu-container">
+                    <p class="label-text"><input type="checkbox" id="read-id">
+                        <span>唸讀</span>
+                        <label for="read-id"></label></p>
+                </div>
+            </li>
             <li class="cursor" aria-label="文字">
                 <button class="btn-font cursor background-icon"></button>
                 <div class="font-menu-container">
@@ -174,7 +183,6 @@
             </li>
         </ul>
     </div>
-    
 </div>
 
 
