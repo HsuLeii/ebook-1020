@@ -112,14 +112,13 @@ header{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+	transform: translate(-50%, calc(-50% - 30px));
 }
 .book-page-bg{
 	width: 100%;
 	height: 100%;
 	max-width: 90%;
-    /* max-height: calc(100vh - 200px); */
-    transform: translate(0px, -30px);
+    max-height: calc(100vh - 240px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -127,7 +126,7 @@ header{
 .two-right-book-page-bg{
 	width: auto;
 	height: auto;
-	max-width: 45%;
+	max-width: 65%;
 }
 .two-right-book-page-bg img{
 	width: 100% !important;
@@ -139,8 +138,24 @@ header{
 }
 .half-book-page-img > .book-page-bg , .half-book-page-img > .book-page-bg img{
 	max-height: calc((100vh - 200px) / 2);
+	height: auto;
 }
-.half-book-page-img > .text{
+.text{
+	text-align: center;
+    position: absolute;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+	overflow: auto;
+}
+.text > .article p{
+	text-align: left;
+    word-break: break-all;
+    margin: 0 auto;
+	padding: 25px 20px;
+    background-color: #ffffffcc;
+}
+.half-text{
 	max-height: calc((100vh - 200px) / 2);
 	height: 100%;
 	width: 100%;
@@ -148,17 +163,18 @@ header{
 	position: static;
 	bottom: auto;
 }
-.half-book-page-img > .text > .article p{
+.half-text > .article p{
 	background-color: transparent;
 }
 .template-book-page-img > .text{
 	bottom: auto;
 }
 .template-book-page-img > .text > .article p{
-	background-color: #ffffff75;
+	background-color: #ffffffcc;
 	text-align: left;
 }
-.template-book-page-img > .text > .article , .template-book-page-img > .text > .article p{
+.template-book-page-img > .text > .article , .template-book-page-img > .text > .article p,
+.book-page-img > .top-text > .article , .book-page-img > .top-text > .article p{
 	width: 100%;
 	height: 100%;
 }
@@ -170,33 +186,19 @@ header{
 }
 .picture-below > .text{
 	order: 1;
+	position: relative;
 }
 .full-back{
-    background-color: #ffffff75;
+    background-color: #ffffffcc;
 }
 .text.full-back > .article p{
     background-color: transparent;
 }
-.text{
-	text-align: center;
-    position: absolute;
-    width: auto;
-    height: auto;
-    max-width: 50%;
-	transform: translate(0px, -30px);
-	overflow: auto;
-}
-.text > .article p{
-	text-align: center;
-    word-break: break-all;
-    margin: 0 auto;
-	padding: 25px 20px;
-    background-color: #ffffff75;
-}
+
 .two-right-text {
     top: auto;
     bottom: auto;
-    max-width: 45%;
+    max-width: 25%;
 	position: static;
 	max-height: calc(100vh - 240px);
 }
@@ -205,9 +207,21 @@ header{
     line-height: 2;
 	overflow: scroll;
 }
+.nopic-page{
+	width: 90%;
+}
 .nopic-text {
-    top: auto;
-    bottom: auto;
+    position: relative;
+	width: 45%;
+	max-height: calc(100vh - 240px);
+	background-image: url(../image/bg/nopic-bg.png);
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	border-radius: 8px;
+    -webkit-box-shadow: 1px 1px 5px #4b4b4b45;
+    -moz-box-shadow: 1px 1px 5px #4b4b4b45;
+    box-shadow: 1px 1px 5px #4b4b4b45;
 }
 .nopic-text > .article p{
 	text-align: left;
@@ -254,6 +268,7 @@ header{
 	width: auto;
 	height: auto;
 	max-height: calc(100vh - 240px);
+	max-width: 100%;
 }
 .book-page.move{
 	z-index:1;
@@ -262,10 +277,14 @@ header{
     max-width: calc(100% - 360px);
     right: 360px;
     left: auto;
-    transform: translate(0px, -50%);
+    transform: translate(0px, calc(-50% - 30px));
 }
 .book-page.move > .half-book-page-img > .book-page-bg{
-    max-width:none;
+    max-width:90%;
+}
+.book-page.move > .book-page-img > .top-text{
+	width: 100%;
+	height: 100%;
 }
 .progress{
 	width: 100%;
@@ -735,9 +754,9 @@ header{
     left: auto;
 }
 .book-page.screen > .book-page-img > .text{
-    transform: translate(0px, 0px);
-	-webkit-transform: translate(0px, 0px);
-	-ms-transform: translate(0px, 0px);
+    transform: translate(0px, 15px);
+	-webkit-transform: translate(0px, 15px);
+	-ms-transform: translate(0px, 15px);
 }
 .book-page.screen > .book-page-img > .book-page-bg{
     transform: translate(0px, 15px);
@@ -813,6 +832,20 @@ input:checked ~ label:after {
 @media (max-width: 1024px) {
 .button-menu > ul > li > button{
 	margin-left: 10px;
+}
+.two-right-book-page-bg{
+	max-width: 100%;
+}
+.two-right-book-page > .book-page-img{
+	flex-direction: column;
+	justify-content: center;
+	max-height: calc(100vh - 200px);
+}
+.two-right-book-page > .book-page-img img{
+	max-height: calc((100vh - 200px) / 2);
+}
+.two-right-text{
+	max-width: 100%;
 }
 
 .btn-prev:hover{
@@ -892,7 +925,7 @@ input:checked ~ label:after {
     }
 
 	.text{
-		max-width: 80%;
+		max-width: 100%;
 	}
 	.two-right-text{
 		max-width: 90%;
@@ -902,7 +935,7 @@ input:checked ~ label:after {
 		max-width: 90%;
 		max-height: calc(90vh - 305px);
 	}
-	.half-book-page-img > .text{
+	.half-text{
 		margin-top: 0px;
 		height: auto;
 	}
@@ -1012,7 +1045,7 @@ input:checked ~ label:after {
 	}
 	.word-area.open{
 		width: calc(100% - 70px);
-		height: 200px;
+		height: 150px;
 		left: 10px;
 		top: auto;
         bottom: 105px;
@@ -1052,38 +1085,31 @@ input:checked ~ label:after {
     .book-page.move > .book-page-img {
 		height: auto;
         max-width: 90%;
-        max-height: calc(100vh - 310px);
+        max-height: calc(100vh - 250px);
         right: auto;
         left: auto;
         top: auto;
-        bottom: 290px;
+        bottom: 260px;
         transform: translate(0px, 0%);
+    }
+	.book-page.move > .book-page-img > .book-page-bg {
+        max-width: 90%;
     }
 	.book-page.move > .half-book-page-img {
         max-width: none;
     }
 	.book-page-img img{
-		max-width: 90%;
+		max-width: 100%;
 	}
 	.book-page.move > .book-page-img img{
 		transform: translate(0px , 0px);
 	}
-	.two-right-book-page-bg{
-		max-height: calc((100vh - 200px) / 2);
-	}
-	.two-right-book-page > .book-page-img{
-		flex-direction: column;
-		justify-content: center;
-		max-height: calc(100vh - 200px);
-	}
-	.two-right-book-page > .book-page-img img{
-		max-height: calc((100vh - 320px) / 2);
-	}
+	
 	.half-book-page-img{
 		justify-content: center;
 	}
 	.half-book-page-img > .book-page-bg{
-		max-width: none;
+		max-width: 90%;
 	}
 	.book-page.move > .half-book-page-img > .book-page-bg {
 		max-width: 90%;

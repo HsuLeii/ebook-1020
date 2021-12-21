@@ -95,7 +95,7 @@
 <div class="play-area">
     <div class="progress">
             <div class="drag-line">
-              <div class="line" style="width: 40%; height: 4px; background: #222A4F; border-radius: 8px;"></div> 
+              <div class="line" style="width: 40%; height: 4px;"></div> 
               <div class="draggable-button cursor"></div>
             </div>
             <div class="number-page">
@@ -115,44 +115,63 @@
         <button class="sound-img cursor background-icon">
         </button>
             <div class="sound-drag-line">
-              <div class="sound-line" style="width: 40%; height: 4px; "></div> 
-              <div class="sound-draggable-button cursor"></div>   
+                <div class="sound-line" style="width: 40%; height: 4px; "></div> 
+                <div class="sound-draggable-button cursor"></div>   
             </div>
         
     </div>
     <div class="button-menu">
         <ul>
-            <li class="cursor" aria-label="加入書庫">
+            <!-- <li class="cursor" aria-label="加入書庫">
                 <button class="btn-favorite cursor background-icon"></button>
-            </li>
+            </li> -->
             <li class="cursor" aria-label="文字">
                 <button class="btn-font cursor background-icon"></button>
                 <div class="font-menu-container">
-                    <p>文字<input type="checkbox" id="text-id" checked>
+                    <p class="label-text"><input type="checkbox" id="text-id" checked>
+                        <span>文字</span>
                         <label for="text-id"></label></p>
-                        <p>拼音<input type="checkbox" id="pinyin-id" checked>
+                        <p class="label-text"><input type="checkbox" id="pinyin-id" checked>
+                            <span>拼音</span>
                             <label for="pinyin-id"></label></p>
-                    
                 </div>
             </li>
-            <li class="cursor" aria-label="逐句">
+            <li class="cursor" aria-label="唸讀">
                 <button class="btn-verbatim cursor background-icon"></button>
+                <div class="read-menu-container">
+                    <p class="label-text"><input type="checkbox" id="read-id">
+                        <span>唸讀</span>
+                        <label for="read-id"></label></p>
+                </div>
             </li>
+            <!-- <li class="cursor" aria-label="詞彙">
+                <button class="btn-word cursor background-icon simplified"></button>
+                <div class="word-menu-container">
+                    <p class="label-text"><input type="checkbox" id="word-id">
+                        <span>詞彙</span>
+                        <label for="word-id"></label></p>
+                </div>
+            </li> -->
             <li class="cursor" aria-label="詞彙">
-                <button class="btn-word cursor background-icon"></button>
+                <button class="btn-word cursor background-icon traditionale"></button>
+                <div class="word-menu-container">
+                    <p class="label-text"><input type="checkbox" id="word-id">
+                        <span>詞彙</span>
+                        <label for="word-id"></label></p>
+                </div>
             </li>
             <li class="cursor" aria-label="語速">
-                <button class="btn-speak cursor background-icon"></button>
+                <button class="btn-speak cursor background-icon" disabled></button>
                 <div class="speak-menu-container">
                     <p>0.5</p>
                     <p>1.0</p>
                     <p>1.5</p>
                 </div>
             </li>
-            <li class="cursor" aria-label="錄音">
+            <!-- <li class="cursor" aria-label="錄音">
                 <button class="btn-record cursor background-icon"></button>
-            </li>
-            <li class="cursor" aria-label="放大">
+            </li> -->
+            <li class="cursor" aria-label="放大" style="display: none;">
                 <button class="btn-magnifier cursor background-icon"></button>
                 <div class="magnifier-menu-container">
                     <p>0.5</p>

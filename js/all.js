@@ -18,27 +18,69 @@ var read = document.querySelector('.read-menu-container');
 var vocabulary = document.querySelector('.word-menu-container');
 var page = document.querySelector('.book-page');
 var playarea = document.querySelector('.play-area');
-
 $(play).hide();
-$("#word-id").click(function() {
-  box.classList.toggle("open");
-  book.classList.toggle("move");
-  page.classList.remove("screen");
-});
-$("#read-id").click(function() {
-  $(play).toggle();
-  $('.sound-line').toggleClass("grey");
-  if ($('.sound-img').prop('disabled')) {
-    $('.sound-img').prop('disabled',false);
-  }else{
-    $('.sound-img').prop('disabled',true);
+
+$("#word-id").change(function () {
+  if ($(this).is(":checked")) {
+    box.classList.add("open");
+    book.classList.add("move");
+    var templatetextwidth = $(".book-page-bg > img").width();
+    $(".text").css({
+      "max-width": "90%" , "max-height": templatetextwidth 
+    });
+    $(".two-right-text").css({
+      "max-width": "25%"
+    });
+    $(".half-text").css({
+      "max-width": "90%" , "max-height": "calc((100vh - 200px) / 2.5)"
+    });
+    $(".nopic-text").css({
+      "max-width": "45%" , "max-height": "calc(100vh - 240px)"
+    });
+  } else {
+    box.classList.remove("open");
+    book.classList.remove("move");
+    $(".text").css({
+      "max-width": "none" , "max-height": "none"
+    });
+    $(".two-right-text").css({
+      "max-width": "25%"
+    });
+    $(".half-text").css({
+      "max-width": "100%" , "max-height": "calc((100vh - 200px) / 2.5)"
+    });
+    $(".nopic-text").css({
+      "max-width": "45%" , "max-height": "calc(100vh - 240px)"
+    });
   }
-  if ($('.btn-speak').prop('disabled')) {
+});
+
+$("#read-id").change(function () {
+  if ($(this).is(":checked")) {
+    $(play).show();
+    $('.sound-img').prop('disabled',false);
     $('.btn-speak').prop('disabled',false);
-  }else{
+  } else {
+    $(play).hide();
+    $('.sound-img').prop('disabled',true);
     $('.btn-speak').prop('disabled',true);
   }
 });
+
+// $("#read-id").click(function() {
+//   $(play).toggle();
+//   $('.sound-line').toggleClass("grey");
+//   if ($('.sound-img').prop('disabled')) {
+//     $('.sound-img').prop('disabled',false);
+//   }else{
+//     $('.sound-img').prop('disabled',true);
+//   }
+//   if ($('.btn-speak').prop('disabled')) {
+//     $('.btn-speak').prop('disabled',false);
+//   }else{
+//     $('.btn-speak').prop('disabled',true);
+//   }
+// });
 
 $("#pinyin-id").change(function () {
   if ($(this).is(":checked")) {
@@ -52,8 +94,12 @@ $("#pinyin-id").change(function () {
 $("#text-id").change(function () {
   if ($(this).is(":checked")) {
     $(".text").show();
+    $('#pinyin-id').prop('disabled',false);
   } else {
     $(".text").hide();
+    $(".text > .article > p > ruby > rt").hide();
+    $('#pinyin-id').prop('checked',false);
+    $('#pinyin-id').prop('disabled',true);
   }
 });
 
@@ -66,18 +112,35 @@ $(function () {
   $(".text").css({
     "height": templatetextheight
   });
-  var tworightbookbg = $(".two-right-book-page-bg").height();
-  $(".two-right-text").css({
-    "height": tworightbookbg
+  var nopicheight = $(".nopic-text").width();
+  $(".nopic-text").css({
+    "height": nopicheight
   });
-  $(".text.two-right-text").css({
-    "max-width": "45%"
-  });
-  var halftextwidth = $(".book-page-bg").width();
-  $(".text").css({"max-width": halftextwidth});
-  var textheight = $(".a2-2-book-page-bg > img").height() / 2;
-  $(".a2-2-text").css({"max-height": textheight});
+  // var halftextwidth = $(".book-page-bg").width();
+  // $(".text").css({"max-width": halftextwidth});
+  // var textheight = $(".a2-2-book-page-bg > img").height() / 2;
+  // $(".a2-2-text").css({"max-height": textheight});
 });
+
+if ($(window).width() <= 1024) {
+  var templatetextheight = $(".book-page-bg > img").height() / 2;
+  $(".two-right-text").css({
+    "max-height": templatetextheight
+  });
+  $("#word-id").change(function () {
+    if ($(this).is(":checked")) {
+      $(".two-right-text").css({
+        "max-width": "100%" , "max-height": templatetextheight
+      });
+    } else {
+      $(".two-right-text").css({
+        "max-width": "100%" , "max-height": templatetextheight
+      });
+    }
+  });
+}
+else {
+}
 
 word.addEventListener('click', function () {
   // this.classList.toggle("end-word");
@@ -140,28 +203,6 @@ screen.addEventListener('click', function () {
 play.addEventListener('click', function () {
   this.classList.toggle("pause");
 });
-
 favorite.addEventListener('click', function () {
   this.classList.toggle("click");
 });
-if ($(window).width() < 768) {
-  $("#text-id").change(function () {
-    if ($(this).is(":checked")) {
-      $(".a2-2-text p").show();
-      $(".book-page-img").css("justify-content", "center");
-    } else {
-      $(".a2-2-text p").hide();
-      $(".book-page-img").css("justify-content", "center");
-    }
-  });
-} else if ($(window).width() > 768) {
-  var textwidth = $(".book-page-bg > img").width();
-  $(".text").css({
-    "max-width": textwidth
-  });
-  var textheight = $(".a2-2-book-page-bg > img").height();
-  $(".a2-2-text").css({
-    "height": textheight
-  });
-}
-
