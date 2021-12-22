@@ -205,9 +205,7 @@ header{
     line-height: 2;
 	overflow: scroll;
 }
-.nopic-page{
-	width: 90%;
-}
+
 .nopic-text {
     position: relative;
 	width: 45%;
@@ -353,7 +351,7 @@ header{
 	align-items: center;
 	width: 100%;
 	margin: 0 auto;
-	padding: 22px 5%;
+	padding: 17px 5%;
 	background-color: #d2d2d2;
 	position: absolute;
 	z-index: 3;
@@ -368,8 +366,8 @@ header{
     align-items: center;
 }
 .sound-img{
-	width: 25px;
-	height: 25px;
+	width: 30px;
+	height: 30px;
 	margin-right: 10px;
 	background-image: url(../image/button/sound.svg);
 	background-size: cover;
@@ -434,7 +432,7 @@ header{
 .background-icon{
 	width: 25px;
 	height: 25px;
-	margin-left: 15px;
+	margin-left: 20px;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -681,13 +679,13 @@ header{
 .word-area{
 	width: 0px;
 	height: calc(75vh - 69px);
-	background: #fffbba;
+	background: #fffdd4;
 	border: 1.5px solid #222A4F;
 	position: fixed;
 	right: -100%;
 	top: 0px;
 	z-index: 1;
-	padding: 60px 15px;
+	padding: 60px 15px 15px;
 	margin-top: 12.5vh;
 	border-radius: 8px;
 	-webkit-transition: 0.3s ease all;
@@ -732,6 +730,7 @@ header{
 	background-color: #222A4F;
 	border-radius: 4px;
 	padding: 4px;
+	display: none;
 }
 .book-page.screen{
 	z-index: 3;
@@ -829,9 +828,6 @@ input:checked ~ label:after {
 	transform: translateX(-100%);
 }
 @media (max-width: 1024px) {
-.button-menu > ul > li > button{
-	margin-left: 10px;
-}
 .two-right-book-page-bg{
 	max-width: 100%;
 }
@@ -955,6 +951,7 @@ input:checked ~ label:after {
 	.background-icon{
 		width: 20px;
 		height: 20px;
+		margin-left: 0px;
 	}
 	.bottom-tab{
 		display: none;
@@ -1008,6 +1005,7 @@ input:checked ~ label:after {
 	.play button {
 		width: 12px;
 		height: 12px;
+		margin-left: 10px;
 	}
 	.play button:nth-child(2) {
 		width: 35px;

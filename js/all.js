@@ -35,7 +35,7 @@ $("#word-id").change(function () {
       "max-width": "90%" , "max-height": "calc((100vh - 200px) / 2.5)"
     });
     $(".nopic-text").css({
-      "max-width": "45%" , "max-height": "calc(100vh - 240px)"
+      "width": "auto" ,"max-width": "90%" , "max-height": "calc(100vh - 240px)"
     });
   } else {
     box.classList.remove("open");
@@ -60,10 +60,12 @@ $("#read-id").change(function () {
     $(play).show();
     $('.sound-img').prop('disabled',false);
     $('.btn-speak').prop('disabled',false);
+    $('.sound-line').removeClass("grey");
   } else {
     $(play).hide();
     $('.sound-img').prop('disabled',true);
     $('.btn-speak').prop('disabled',true);
+    $('.sound-line').addClass("grey");
   }
 });
 
