@@ -227,10 +227,19 @@ header{
 	line-height: 1.8;
     letter-spacing: 3px;
 }
+.top-center-text > .article , .bottom-center-text > .article{
+    max-width: calc(100% - 24px);
+    max-height: calc(100% - 24px);
+    margin: 0px 12px;
+    overflow: auto;
+}
 .bottom-left-text > .article , .bottom-right-text > .article , .top-left-text > .article , .top-right-text > .article{
 	position: absolute;
 	width: auto;
 	max-width: calc(100% - 24px);
+	max-height: calc(100% - 24px);
+	overflow: auto;
+	/* padding: 12px; */
 }
 .top-center-text > .article , .bottom-center-text > .article{
 	position: absolute;
