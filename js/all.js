@@ -18,7 +18,6 @@ var read = document.querySelector('.read-menu-container');
 var vocabulary = document.querySelector('.word-menu-container');
 var page = document.querySelector('.book-page');
 var playarea = document.querySelector('.play-area');
-$(play).hide();
 
 $("#word-id").change(function () {
   if ($(this).is(":checked")) {
@@ -125,18 +124,18 @@ $(function () {
 });
 
 if ($(window).width() <= 1024) {
-  var templatetextheight = $(".book-page-bg > img").height() / 2;
+  var tworighttextheight = $(".book-page-bg > img").height() / 2;
   $(".two-right-text").css({
-    "max-height": templatetextheight
+    "max-height": tworighttextheight
   });
   $("#word-id").change(function () {
     if ($(this).is(":checked")) {
       $(".two-right-text").css({
-        "max-width": "100%" , "max-height": templatetextheight
+        "max-width": "100%" , "max-height": tworighttextheight
       });
     } else {
       $(".two-right-text").css({
-        "max-width": "100%" , "max-height": templatetextheight
+        "max-width": "100%" , "max-height": tworighttextheight
       });
     }
   });
