@@ -1,301 +1,209 @@
-var question = document.getElementsByClassName("faq-question");
-var meter = document.getElementsByClassName("meter");
-var bookimgheight = $(".book-img").width();
-var read = document.getElementsByClassName('read');
-var mapcontent = document.getElementsByClassName('map-content');
-var lowestwidth = $(".lowest").width();
-$(".lowest , .highest , .average").css({"height": lowestwidth }); 
+var word = document.querySelector('.btn-word');
+var box = document.querySelector('.word-area');
+var arrow = document.querySelector('.arrow')
+var sound = document.querySelector('.sound-img');
+var magnifier = document.querySelector('.btn-magnifier');
+var font = document.querySelector('.btn-font');
+var favorite = document.querySelector('.btn-favorite');
+var record = document.querySelector('.btn-record');
+var speak = document.querySelector('.btn-speak');
+var verbatim = document.querySelector('.btn-verbatim');
+var screen = document.querySelector('.btn-screen');
+var play = document.querySelector('.btn-play');
+var book = document.querySelector('.book-page');
+var speaking = document.querySelector('.speak-menu-container');
+var enlarge = document.querySelector('.magnifier-menu-container');
+var text = document.querySelector('.font-menu-container');
+var read = document.querySelector('.read-menu-container');
+var vocabulary = document.querySelector('.word-menu-container');
+var page = document.querySelector('.book-page');
+var playarea = document.querySelector('.play-area');
 
-$(".book-img").css({"height": bookimgheight }); 
-$(".topic").before("<img src=''/>");
+$("#word-id").change(function () {
+  if ($(this).is(":checked")) {
+    box.classList.add("open");
+    book.classList.add("move");
+    var templatetextwidth = $(".book-page-bg > img").width();
+    $(".text").css({
+      "max-width": "90%" , "max-height": templatetextwidth 
+    });
+    $(".two-right-text").css({
+      "max-width": "25%"
+    });
+    $(".half-text").css({
+      "max-width": "90%" , "max-height": "calc((100vh - 200px) / 2.5)"
+    });
+    $(".nopic-text").css({
+      "width": "auto" ,"max-width": "90%" , "max-height": "calc(100vh - 240px)"
+    });
+  } else {
+    box.classList.remove("open");
+    book.classList.remove("move");
+    $(".text").css({
+      "max-width": "none" , "max-height": "none"
+    });
+    $(".two-right-text").css({
+      "max-width": "25%"
+    });
+    $(".half-text").css({
+      "max-width": "100%" , "max-height": "calc((100vh - 200px) / 2.5)"
+    });
+    $(".nopic-text").css({
+      "max-width": "45%" , "max-height": "calc(100vh - 240px)"
+    });
+  }
+});
+
+$("#read-id").change(function () {
+  if ($(this).is(":checked")) {
+    $(play).show();
+    $('.sound-img').prop('disabled',false);
+    $('.btn-speak').prop('disabled',false);
+    $('.sound-line').removeClass("grey");
+  } else {
+    $(play).hide();
+    $('.sound-img').prop('disabled',true);
+    $('.btn-speak').prop('disabled',true);
+    $('.sound-line').addClass("grey");
+  }
+});
+
+// $("#read-id").click(function() {
+//   $(play).toggle();
+//   $('.sound-line').toggleClass("grey");
+//   if ($('.sound-img').prop('disabled')) {
+//     $('.sound-img').prop('disabled',false);
+//   }else{
+//     $('.sound-img').prop('disabled',true);
+//   }
+//   if ($('.btn-speak').prop('disabled')) {
+//     $('.btn-speak').prop('disabled',false);
+//   }else{
+//     $('.btn-speak').prop('disabled',true);
+//   }
+// });
+
+$("#pinyin-id").change(function () {
+  if ($(this).is(":checked")) {
+    $(".text p > ruby > rt").show();
+    $(".text > .article > p > ruby > rt").show();
+  } else {
+    $(".text p > ruby > rt").hide();
+    $(".text > .article > p > ruby > rt").hide();
+  }
+});
+$("#text-id").change(function () {
+  if ($(this).is(":checked")) {
+    $(".text").show();
+    $('#pinyin-id').prop('disabled',false);
+  } else {
+    $(".text").hide();
+    $(".text > .article > p > ruby > rt").hide();
+    $('#pinyin-id').prop('checked',false);
+    $('#pinyin-id').prop('disabled',true);
+  }
+});
+
 $(function () {
-  $("div.faq-answer").hide(); //子選單(div.faq-answer)隱藏
-  $(question).click(function () {
-    $("div.faq-answer").slideUp();
-    if ($("+div", this).css("display") == "none") {
-      $("+div", this).slideDown();
-      $(question).siblings("button").children("img").removeClass("up");
-      $(this).siblings("button").children("img").addClass("up");
-      //被點擊的元素新增一組class(open)
-    } else if ($("+div", this).css("display") == "block") {
-      $("+div", this).slideUp();
-      $(this).siblings("button").children("img").removeClass("up");
-      //被點擊的元素新增一組class(open)
-    }
-  })
-
-  $("button.question-arrow").click(function () {
-    $("div.faq-answer").slideUp();
-    if ($(this).prev().css("display") == "none") {
-      $(this).prev().slideDown();
-      $("button.question-arrow").children("img").removeClass("up");
-      $(this).children("img").addClass("up");
-      //被點擊的元素新增一組class(open)
-    } else if ($(this).prev().css("display") == "block") {
-      $(this).prev().slideUp();
-      $("button.question-arrow").children("img").removeClass("up");
-      //被點擊的元素新增一組class(open)
-    }
-  })
-  $(".menu-avatar").click(function () {
-    $(".dropdown-content.content-avatar-menu").toggle();
+  var templatetextwidth = $(".book-page-bg > img").width();
+  $(".text").css({
+    "width": templatetextwidth
   });
-  $(read).click(function () {
-    alert("繼續閱讀請登入");
+  var templatetextheight = $(".book-page-bg > img").height();
+  $(".text").css({
+    "height": templatetextheight
   });
-  $(".main >h1").click(function () {
-    alert("繼續閱讀請登入");
+  var nopicheight = $(".nopic-text").width();
+  $(".nopic-text").css({
+    "height": nopicheight
   });
-
-    $(".dacc-test").click(function(){
-      $(".dacctest-text > p").html("測驗已完成，下次測驗時間:<br />2022/10/14 7:00AM-2022/12/31 5:00PM");
-      $(this).hide();
-      $(".daccPage-DACC__chart").show();
-    });
-
-
-  $(".pre-meter").children("span").addClass("active");
-  $(meter).click(function () {
-    $(meter).siblings(".grade-content").css("display", "none");
-    $(this).siblings(".grade-content").css("display", "block");
-    $(meter).children("span").removeClass("active");
-    $(this).children("span").addClass("active");
-  });
-  $(meter).hover(function () {
-    $(meter).siblings(".grade-content").css("display", "none");
-    $(this).siblings(".grade-content").css("display", "block");
-    $(meter).children("span").removeClass("active");
-    $(this).children("span").addClass("active");
-  });
-
-  $("#toggle").click(function () {
-    $(".menu").toggleClass("opened");
-    $(this).toggleClass("open");
-    $("body").toggleClass("fixed");
-  });
-
-  $(".avatar-area").click(function () {
-    $(this).children("li.avatar").children("img").toggleClass("active");
-    $(this).siblings("div").children("li.avatar").children("img").removeClass("active");
-  });
-  
-
-  $('.modal-btn ul li.introduction').click(function(){
-    $('.modal-btn ul li').removeClass('active');
-    $('.modal-btn ul li.introduction').addClass('active');
-    var selector = $('.modal-btn ul li.introduction').attr('data-filter');
-      $('.introduction-item').isotope({
-        filter: selector
-      })
-  });
-  $('.item.vocabulary').hide();
-  $('.modal-btn ul li.vocabulary').click(function(){
-    $('.modal-btn ul li').removeClass('active');
-    $('.modal-btn ul li.vocabulary').addClass('active');
-    $('.item.vocabulary').addClass('active');
-    $('.item.vocabulary').show();
-    var selector = $('.modal-btn ul li.vocabulary').attr('data-filter');
-      $('.introduction-item').isotope({
-        filter: selector
-      })
-  });
-  
-  $(".bullet").click(function(){
-    $(this).siblings(".icontext").addClass("change");  
-    $(this).parent(".point").siblings(".point").children(".icontext").removeClass("change");
-  });
-  
-  $(".bullet").hover(function(){
-    $(this).siblings(".icontext").addClass("change");  
-    $(this).parent(".point").siblings(".point").children(".icontext").removeClass("change");
-  });
-
-  $(".icontext").click(function(){
-    $(this).addClass("change");  
-    $(this).parent(".point").siblings(".point").children(".icontext").removeClass("change");
-  });
-  
-  $(".icontext").hover(function(){
-    $(this).addClass("change");  
-    $(this).parent(".point").siblings(".point").children(".icontext").removeClass("change");
-  });
-
-  $( ".book-block , .book-text" ).hover(function() {
-    $( this ).parent().toggleClass("active");
-  });
-
-  $( ".option-tag" ).hover(function() {
-    $(this).addClass("active");
-    $(this).siblings("div").removeClass("active");
-    if ( $(".pre-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#2BC5CF");}
-    if ( $(".a1-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#0B98CF");}
-    if ( $(".a2-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#0C4367");}
-    if ( $(".b1-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#7B002C");}
-    if ( $(".b2-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#C82030");}
-    if ( $(".c1-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#F77800");}
-    if ( $(".c2-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#93A315");}
-  });
-
-  $( ".option-tag" ).click(function() {
-    $(this).addClass("active");
-    $(this).siblings("div").removeClass("active");
-    if ( $(".pre-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#2BC5CF");}
-    if ( $(".a1-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#0B98CF");}
-    if ( $(".a2-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#0C4367");}
-    if ( $(".b1-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#7B002C");}
-    if ( $(".b2-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#C82030");}
-    if ( $(".c1-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#F77800");}
-    if ( $(".c2-tag").hasClass("active") ){$(this).parent(".folder-tag").parent(".folder").css("border-color", "#93A315");}
-  });
-
-  $(".sort-time").click(function () {
-    $(this).children("p").children("img").toggleClass("up");
-  });
-
-  $(".sort-difficulty").click(function () {
-    $(this).children("p").children("img").toggleClass("up");
-  });
-  
-  if ($(this).width() < 1024) {
-    $(document).ready(function () {
-      $(".button-about-menu").click(function () {
-        $(".content-about-menu").toggleClass("open");
-      });
-      $(".button-login-menu").click(function () {
-        $(".content-login-menu").toggleClass("open");
-        $(".login-dropdown").toggleClass("open");
-      });
-      $(".button-personal-menu").click(function () {
-        $(".content-personal-menu").toggleClass("open");
-      });
-      $(".button-map-menu").click(function () {
-        $(".content-map-menu").toggleClass("open");
-      });
-      $(".button-language-menu").click(function () {
-        $(".content-language-menu").toggleClass("open");
-      });
-      $(".arrow").click(function () {
-        $(this).toggleClass("up");
-      });
-    });
-  }
-
-  if ($(this).width() < 768) {
-    $(document).ready(function () {
-      $(".icontext.pre").addClass("change");
-      $(".bullet").click(function(){
-        $(this).siblings(".icontext").addClass("change");  
-        $(this).siblings(".icontext").children("p").show();      
-        $(this).parent(".point").siblings(".point").children(".icontext").removeClass("change");
-        $(this).parent(".point").siblings(".point").children(".icontext").children("p").hide(); 
-      });
-      
-      $(".bullet").hover(function(){
-        $(this).siblings(".icontext").addClass("change");  
-        $(this).siblings(".icontext").children("p").show();      
-        $(this).parent(".point").siblings(".point").children(".icontext").removeClass("change");
-        $(this).parent(".point").siblings(".point").children(".icontext").children("p").hide(); 
-      });
-  
-      $(".icontext").click(function(){
-        $(this).addClass("change");  
-        $(this).children("p").show();      
-        $(this).parent(".point").siblings(".point").children(".icontext").removeClass("change");
-        $(this).parent(".point").siblings(".point").children(".icontext").children("p").hide(); 
-      });
-      
-      $(".icontext").hover(function(){
-        $(this).addClass("change");  
-        $(this).children("p").show();      
-        $(this).parent(".point").siblings(".point").children(".icontext").removeClass("change");
-        $(this).parent(".point").siblings(".point").children(".icontext").children("p").hide(); 
-      });
-      });
-  }
+  // var halftextwidth = $(".book-page-bg").width();
+  // $(".text").css({"max-width": halftextwidth});
+  // var textheight = $(".a2-2-book-page-bg > img").height() / 2;
+  // $(".a2-2-text").css({"max-height": textheight});
 });
 
-
-
-var swiper = new Swiper(".mySwiper", {
-
-  autoplay: false,
-  spaceBetween: 15,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  scrollbar: {
-    el: ".swiper-scrollbar",
-    draggable: true,
-  },
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-    },
-    500: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 4,
-      loop: false,
+if ($(window).width() <= 1024) {
+  var tworighttextheight = $(".book-page-bg > img").height() / 2;
+  $(".two-right-text").css({
+    "max-height": tworighttextheight
+  });
+  $("#word-id").change(function () {
+    if ($(this).is(":checked")) {
+      $(".two-right-text").css({
+        "max-width": "100%" , "max-height": tworighttextheight
+      });
+    } else {
+      $(".two-right-text").css({
+        "max-width": "100%" , "max-height": tworighttextheight
+      });
     }
+  });
+}
+else {
+}
+
+word.addEventListener('click', function () {
+  // this.classList.toggle("end-word");
+  vocabulary.classList.toggle("open");
+  speaking.classList.remove("open");
+  enlarge.classList.remove("open");
+  read.classList.remove("open");
+  text.classList.remove("open");
+});
+arrow.addEventListener('click', function () {
+  box.classList.toggle("open");
+  book.classList.toggle("move");
+});
+sound.addEventListener('click', function () {
+  this.classList.toggle("mute");
+});
+verbatim.addEventListener('click', function () {
+  read.classList.toggle("open");
+  enlarge.classList.remove("open");
+  speaking.classList.remove("open");
+  enlarge.classList.remove("open");
+  text.classList.remove("open");
+  vocabulary.classList.remove("open");
+});
+speak.addEventListener('click', function () {
+  speaking.classList.toggle("open");
+  page.classList.remove("screen");
+  text.classList.remove("open");
+  enlarge.classList.remove("open");
+  read.classList.remove("open");
+  vocabulary.classList.remove("open");
+});
+magnifier.addEventListener('click', function () {
+  enlarge.classList.toggle("open");
+  page.classList.remove("screen");
+  speaking.classList.remove("open");
+  text.classList.remove("open");
+  read.classList.remove("open");
+  vocabulary.classList.remove("open");
+});
+font.addEventListener('click', function () {
+  text.classList.toggle("open");
+  page.classList.remove("screen");
+  speaking.classList.remove("open");
+  enlarge.classList.remove("open");
+  read.classList.remove("open");
+  vocabulary.classList.remove("open");
+});
+screen.addEventListener('click', function () {
+  this.classList.toggle("end-screen");
+  box.classList.remove("open");
+  document.getElementById("word-id").checked = false;
+  book.classList.remove("move");
+  if (page.classList.contains('screen')) {
+    page.classList.remove('screen')
+  } else {
+    page.classList.add('screen')
   }
 });
-
-var avatarswiper = new Swiper(".avatarSwiper", {
-
-  autoplay: false,
-  scrollbar: {
-    el: '.swiper-scrollbar',
-    hide: false,
-    draggable: true,
-    snapOnRelease: true,
-    dragSize: 20,
-  },
-  navigation: {
-    nextEl: ".avatar-swiper-button-next",
-    prevEl: ".avatar-swiper-button-prev",
-  },
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 2,
-    },
-    500: {
-      slidesPerView: 3,
-    },
-    1024: {
-      slidesPerView: 4,
-    }
-  }
+play.addEventListener('click', function () {
+  this.classList.toggle("pause");
 });
-
-var slideswiper = new Swiper(".slideSwiper", {
-  autoplay: false,
-  navigation: {
-    nextEl: '.banner-swiper-button-next',
-    prevEl: '.banner-swiper-button-prev',
-  },
-  pagination: {
-    el: ".banner-swiper-pagination",
-    dynamicBullets: true,
-  },
+favorite.addEventListener('click', function () {
+  this.classList.toggle("click");
 });
-
-
-
-
-
-
-
-
-
-
-
-
