@@ -37,15 +37,16 @@ p{
 ruby{
 	font-size: 45px;
 	color: #222A4F;
-	line-height: 1.8;
+	line-height: 2.2;
     letter-spacing: 3px;
 }
 rt {
     color: blue;
-	-webkit-transform: translateY(-15%);
-    -moz-transform: translateY(-15%);
-    transform: translateY(-15%);
+	-webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    transform: translateY(0%);
 }
+
 img{
 	width: 100%;
 }
@@ -924,11 +925,6 @@ input:checked ~ label:after {
 	}
 	p{
 		font-size: 15px;
-	}
-	rt {
-		-webkit-transform: translateY(0%);
-		-moz-transform: translateY(0%);
-		transform: translateY(0%);
 	}
 	.logo img{
 		height: 25px;
