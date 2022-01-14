@@ -924,9 +924,7 @@ input:checked ~ label:after {
 		align-items: flex-start;
 		padding: 15px 5%;
 	}
-	p , ruby{
-		font-size: 15px;
-	}
+	
 	.logo img{
 		height: 25px;
 	}
