@@ -35,13 +35,18 @@ p{
 	line-height: 1.8;
 }
 ruby{
-	font-size: 25px;
+	font-size: 45px;
 	color: #222A4F;
 	line-height: 1.8;
     letter-spacing: 3px;
 }
 rt {
     color: blue;
+}
+rt {
+    -webkit-transform: translateY(-15%);
+    -moz-transform: translateY(-15%);
+    transform: translateY(-15%);
 }
 img{
 	width: 100%;
