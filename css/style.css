@@ -1454,6 +1454,23 @@ input:checked~label:after {
 	}
 }
 
+@media print {
+	body {
+	  background-color: #F7F7F7;
+	  counter-reset: page-number;
+	  /* 初始化，名字可自訂，數值為0 */
+	  -webkit-print-color-adjust: exact;
+	}
+	.text > .article p {
+        text-align: left;
+        word-break: break-all;
+        margin: 0 auto;
+        padding: 10px 12px 5px 12px; /*25px 20px;*/
+        /* background-color: rgba(255, 255, 255, 0.45) !important; */
+		background-image: url(../image/bg/transparent_bg_45.svg);
+    }
+}
+
 ::-webkit-scrollbar {
 	background: transparent;
 	height: 8px;
